@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>旅程 · JOURNEYS</title>
+<meta name="description" content="零依赖单文件 Canvas 生成艺术系列：候鸟、鲸歌、萤、河灯。世界、镜头、声音与诗句全部程序化生成，永不重复。">
+<style>
+:root{--bg:#121110;--paper:#e9e2d3;--ink:#d7cfbf;--dim:#8d8577;--line:rgba(233,226,211,.14);}
+*{box-sizing:border-box;}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:"Songti SC","STSong","Noto Serif SC","Source Han Serif SC","PingFang SC",Georgia,serif;-webkit-font-smoothing:antialiased;}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 0%,rgba(233,226,211,.06),rgba(0,0,0,0) 60%);}
+.wrap{max-width:1180px;margin:0 auto;padding:5.5rem 1.5rem 5rem;}
+header{margin-bottom:3.4rem;}
+h1{font-weight:400;font-size:2.4rem;letter-spacing:.42em;margin:0;text-indent:.42em;color:var(--paper);}
+h1 small{display:block;font-size:.72rem;letter-spacing:.62em;opacity:.55;margin-top:.55rem;font-family:"Helvetica Neue",Arial,sans-serif;text-indent:.62em;}
+header p{max-width:36rem;font-size:.86rem;line-height:2;letter-spacing:.12em;color:var(--dim);margin:1.6rem 0 0;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.6rem 1.4rem;}
+.card{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);background:#161514;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s;position:relative;}
+a.card:hover{transform:translateY(-4px);border-color:rgba(233,226,211,.38);}
+.cover{aspect-ratio:16/9;overflow:hidden;background:#0d0c0b;position:relative;}
+.cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.4s cubic-bezier(.2,.7,.2,1);}
+a.card:hover .cover img{transform:scale(1.035);}
+.meta{padding:1rem 1.15rem 1.15rem;}
+.title{font-size:1.18rem;letter-spacing:.3em;color:var(--paper);}
+.title small{font-size:.6rem;letter-spacing:.28em;opacity:.55;margin-left:.6em;font-family:"Helvetica Neue",Arial,sans-serif;}
+.blurb{font-size:.76rem;line-height:1.8;letter-spacing:.08em;color:var(--dim);margin-top:.45rem;}
+.card.soon{cursor:default;opacity:.62;}
+.card.soon .cover{background:linear-gradient(135deg,#1a1917,#0f0e0d);}
+.card.soon .cover::after{content:"敬请期待";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.8rem;letter-spacing:.5em;text-indent:.5em;color:rgba(233,226,211,.55);border:1px dashed rgba(233,226,211,.14);margin:.8rem;}
+.card.soon .cover canvas{position:absolute;inset:0;width:100%;height:100%;opacity:.55;}
+.sec{margin:3.6rem 0 1.4rem;font-size:.7rem;letter-spacing:.5em;color:var(--dim);display:flex;align-items:center;gap:1rem;}
+.sec::after{content:"";flex:1;height:1px;background:var(--line);}
+footer{margin-top:5rem;font-size:.66rem;letter-spacing:.24em;color:var(--dim);line-height:2;}
+footer a{color:inherit;}
+@media (max-width:640px){.wrap{padding:3.5rem 1rem 3rem;}h1{font-size:1.8rem;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>旅程<small>JOURNEYS · 程序化生成艺术系列</small></h1>
+    <p>每一部都是零依赖的单文件 HTML5 Canvas 作品：一条无限延伸的路线，一群有个体差异的主体，一套无剪辑的自动运镜，一种材质。世界、镜头、声音与诗句全部程序化生成，永不重复。鼠标不是操纵杆，而是一种环境力。</p>
+  </header>
+
+  <div class="sec">已上线</div>
+  <div class="grid">
+    <a class="card" href="migration.html">
+      <div class="cover"><img src="covers/migration.jpg" alt="候鸟 · MIGRATION"></div>
+      <div class="meta"><div class="title">候鸟<small>MIGRATION</small></div><div class="blurb">一群纸质感几何候鸟沿无限航线飞行，穿过暖纸、雾境、暮粉、雪境与夜航。鼠标即是风。</div></div>
+    </a>
+    <a class="card" href="sounding.html">
+      <div class="cover"><img src="covers/sounding.jpg" alt="鲸歌 · SOUNDING"></div>
+      <div class="meta"><div class="title">鲸歌<small>SOUNDING</small></div><div class="blurb">靛蓝染布上的一群鲸，从暖海游到冰海。镜头穿过水面，鲸歌就是配乐。鼠标是一束光，点击即歌，鲸群会回应。</div></div>
+    </a>
+    <a class="card" href="firefly.html">
+      <div class="cover"><img src="covers/firefly.jpg" alt="萤 · FIREFLY"></div>
+      <div class="meta"><div class="title">萤<small>FIREFLY</small></div><div class="blurb">黑纸白描的夏夜小路：稻田、竹林、村落、溪谷、荷塘。几百只萤火虫各自闪烁，慢慢闪成同一个节拍。鼠标是手电，点击闪一下，它们会跟上你的节拍。</div></div>
+    </a>
+    <a class="card" href="lanterns.html">
+      <div class="cover"><img src="covers/lanterns.jpg" alt="河灯 · LANTERNS"></div>
+      <div class="meta"><div class="title">河灯<small>LANTERNS</small></div><div class="blurb">皮影般的两岸，黑水上的河灯顺流而下，每盏灯带一句愿。点击投石，涟漪推开河灯；写一句愿，它会漂进这条河。</div></div>
+    </a>
+  </div>
+
+  <div class="sec">敬请期待</div>
+  <div class="grid" id="soon"></div>
+
+  <footer>纯原生 HTML5 Canvas · 零依赖 · 单文件 · 建议全屏并打开声音<br><a href="https://github.com/threerocks/journeys">github.com/threerocks/journeys</a></footer>
+</div>
+<script>
+const SOON=[
+ ['洄游','HOMING','鲑鱼逆流而上：河口、平原、峡谷、瀑布、雪溪。蓝晒纸。',[.55,.62,.75]],
+ ['驼铃','CARAVAN','绳链成一列的骆驼穿过戈壁与绿洲，每峰驼一个铃音。敦煌矿物色。',[.72,.5,.3]],
+ ['长卷','SCROLL','青绿山水横向长卷，高远、深远、平远三种取景。',[.35,.55,.5]],
+ ['蒲公英','DRIFT','种子随风横越草甸与村镇，落地生花。水彩。',[.7,.7,.55]],
+ ['椋鸟','MURMURATION','黄昏湿地上空两千只椋鸟成形流动，鹞子来袭掀起波浪。炭笔灰纸。',[.45,.45,.5]],
+ ['羊群','HERD','转场的羊群和一条牧羊犬。羊毛毡。',[.62,.58,.5]],
+ ['车窗','RAILS','固定车窗取景的长途列车：针叶林、草原、大湖、隧道、车站。老胶片。',[.5,.48,.42]],
+ ['伞','UMBRELLAS','雨中城市俯瞰，伞是彩色圆点在街巷穿行。水彩。',[.4,.5,.6]],
+ ['天灯','ASCENT','天灯从村庄不断升起，镜头随灯上升，越高越安静。牛皮纸透光。',[.65,.5,.35]]];
+const grid=document.getElementById('soon');
+SOON.forEach((s,i)=>{const d=document.createElement('div');d.className='card soon';d.setAttribute('aria-disabled','true');
+  d.innerHTML='<div class="cover"><canvas></canvas></div><div class="meta"><div class="title">'+s[0]+'<small>'+s[1]+'</small></div><div class="blurb">'+s[2]+'</div></div>';grid.appendChild(d);
+  const c=d.querySelector('canvas');c.width=320;c.height=180;const g=c.getContext('2d');const col=s[3];
+  // 每张待定封面：同色系的程序化纹样，不重复
+  const seed=i*7+3;const R=()=>{let t=(seed*9301+49297+Math.random()*0)%233280;return Math.random();};
+  g.fillStyle='rgb('+(col[0]*40|0)+','+(col[1]*40|0)+','+(col[2]*40|0)+')';g.fillRect(0,0,320,180);
+  for(let k=0;k<26;k++){g.strokeStyle='rgba('+(col[0]*255|0)+','+(col[1]*255|0)+','+(col[2]*255|0)+','+(.06+R()*.12)+')';g.lineWidth=.6+R()*1.4;g.beginPath();
+    let x=R()*320,y=R()*180;g.moveTo(x,y);for(let m=0;m<6;m++){x+=(R()-.5)*90;y+=(R()-.5)*60;g.lineTo(x,y);}g.stroke();}});
+</script>
+</body>
+</html>
