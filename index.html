@@ -34,6 +34,11 @@ a.card:hover .cover img{transform:scale(1.035);}
 footer{margin-top:5rem;font-size:.66rem;letter-spacing:.24em;color:var(--dim);line-height:2;}
 footer a{color:inherit;}
 @media (max-width:640px){.wrap{padding:3.5rem 1rem 3rem;}h1{font-size:1.8rem;}}
+.version-links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem;}
+.version-links a{display:inline-flex;flex:1 1 130px;justify-content:space-between;align-items:center;gap:.65rem;min-height:44px;padding:.7rem .75rem;border:1px solid rgba(233,226,211,.3);color:var(--paper);background:rgba(233,226,211,.045);font-family:"Helvetica Neue","PingFang SC",sans-serif;font-size:.72rem;line-height:1.4;text-decoration:none;transition:background .2s,border-color .2s;}
+.version-links a:hover{background:rgba(233,226,211,.12);border-color:rgba(233,226,211,.6);}
+.version-links a:focus-visible{outline:2px solid var(--paper);outline-offset:3px;}
+.version-links a span{opacity:.6;font-size:1rem;}
 </style>
 </head>
 <body>
@@ -45,10 +50,15 @@ footer a{color:inherit;}
 
   <div class="sec">已上线</div>
   <div class="grid">
-    <a class="card" href="migration.html">
+    <article class="card migration-card" aria-label="候鸟 · MIGRATION">
       <div class="cover"><img src="covers/migration.jpg" alt="候鸟 · MIGRATION"></div>
-      <div class="meta"><div class="title">候鸟<small>MIGRATION</small></div><div class="blurb">一群纸质感几何候鸟沿无限航线飞行，穿过暖纸、雾境、暮粉、雪境与夜航。鼠标即是风。</div></div>
-    </a>
+      <div class="meta"><div class="title">候鸟<small>MIGRATION</small></div><div class="blurb">一群纸质感几何候鸟沿无限航线飞行，穿过暖纸、雾境、暮粉、雪境与夜航。鼠标即是风。</div>
+        <nav class="version-links" aria-label="选择候鸟版本">
+          <a href="migration.html">Fable 5.1 版 <span aria-hidden="true">↗</span></a>
+          <a href="migration-native.html">gpt-6 Astra 版本 <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </article>
     <a class="card" href="sounding.html">
       <div class="cover"><img src="covers/sounding.jpg" alt="鲸歌 · SOUNDING"></div>
       <div class="meta"><div class="title">鲸歌<small>SOUNDING</small></div><div class="blurb">靛蓝染布上的一群鲸，从暖海游到冰海。镜头穿过水面，鲸歌就是配乐。鼠标是一束光，点击即歌，鲸群会回应。</div></div>
